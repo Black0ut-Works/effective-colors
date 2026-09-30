@@ -3,7 +3,8 @@ name: Build Effective Colors
 on:
   workflow_dispatch:
   push:
-    branches: [ "main" ]
+    branches:
+      - main
 
 jobs:
   build:
@@ -23,15 +24,15 @@ jobs:
           distribution: 'temurin'
 
       - name: Make Gradle executable
-        working-directory: effective-colors-template-26.2
+        working-directory: effective-colors-26.2-implemented/ecwork2
         run: chmod +x gradlew
 
-      - name: Build Fabric mod
-        working-directory: effective-colors-template-26.2
+      - name: Build Effective Colors
+        working-directory: effective-colors-26.2-implemented/ecwork2
         run: ./gradlew build
 
-      - name: Upload JAR
+      - name: Upload Effective Colors JAR
         uses: actions/upload-artifact@v4
         with:
           name: EffectiveColors-Minecraft-26.2
-          path: effective-colors-template-26.2/build/libs/*.jar
+          path: effective-colors-26.2-implemented/ecwork2/build/libs/*.jar
