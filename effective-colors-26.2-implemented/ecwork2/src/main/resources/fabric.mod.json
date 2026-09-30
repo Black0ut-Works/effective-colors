@@ -1,0 +1,43 @@
+{
+	"schemaVersion": 1,
+	"id": "effectivecolors",
+	"version": "${version}",
+	"name": "Effective Colors",
+	"description": "Animated RGB names, custom aura animations, particles and client-side cosmetic effects for Minecraft 26.2.",
+	"authors": [
+		"AwesomeJuke"
+	],
+	"contact": {
+		"sources": "https://github.com/Black0ut-Works/effective-colors"
+	},
+	"license": "MIT",
+	"icon": "assets/effectivecolors/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.awesomejuke.effectivecolors.EffectiveColors"
+		],
+		"client": [
+			"com.awesomejuke.effectivecolors.client.EffectiveColorsClient"
+		],
+		"modmenu": [
+			"com.awesomejuke.effectivecolors.client.EffectiveColorsModMenu"
+		]
+	},
+	"mixins": [
+		"effectivecolors.mixins.json",
+		{
+			"config": "effectivecolors.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.19.5",
+		"minecraft": "~26.2",
+		"java": ">=25",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"modmenu": "*"
+	}
+}
