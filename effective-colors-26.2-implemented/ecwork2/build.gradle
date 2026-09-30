@@ -33,7 +33,7 @@ dependencies {
 
 	// Fabric API. This is technically optional, but you probably want it anyway.
 	implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
-	CompileOnly "maven.modrinth:mOgUt4GM:QEDySGIN"
+	compileOnly "maven.modrinth:mOgUt4GM:QEDySGIN"
 }
 
 processResources {
